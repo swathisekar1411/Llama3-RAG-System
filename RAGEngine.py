@@ -72,8 +72,7 @@ def setup_embeddings_and_store(
     return hf_embeddings, vector_store
 
 
-def setup_retrieval_chain(vector_store, llm_name="llama-3.2-1b-preview"):
-    groq_api_key = os.getenv("GROQ_API_KEY")
+def setup_retrieval_chain(vector_store, groq_api_key, llm_name="llama-3.2-1b-preview"):
     llm = ChatGroq(
         groq_api_key=groq_api_key,
         model_name=llm_name,
