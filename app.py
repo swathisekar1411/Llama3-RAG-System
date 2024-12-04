@@ -16,7 +16,7 @@ hf_embeddings, vector_store = setup_embeddings_and_store(
 )
 st.session_state.update({"hf_embeddings": hf_embeddings, "vector_store": vector_store})
 # Set up the retrieval chain
-retrieval_chain = setup_retrieval_chain(vector_store, llm_name="llama-3.2-1b-preview")
+retrieval_chain = setup_retrieval_chain(vector_store, groq_api_key=st.secrets.GROQ_API_KEY, llm_name="llama-3.2-1b-preview")
 
 # Streamlit UI
 st.title("Document Question Answering System")
