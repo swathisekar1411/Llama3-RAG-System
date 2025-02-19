@@ -40,7 +40,7 @@ def setup_embeddings_and_store(
     vector_store = Chroma(
         collection_name="my_collection",
         embedding_function=hf_embeddings,
-        persist_directory="./chroma_langchain_db",  # Where to save data locally, remove if not necessary
+        # persist_directory="./chroma_langchain_db",  # Where to save data locally, remove if not necessary
     )
     text_splitter = RecursiveCharacterTextSplitter(
         separators="\n\n",
